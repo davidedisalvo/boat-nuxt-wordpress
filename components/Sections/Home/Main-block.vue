@@ -82,8 +82,8 @@ export default {
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 50%;
-  @media only screen and (max-width: $mobile) {
-      top: 100%;
+  @media only screen and (max-width: $desktop) {
+      display: none;
   }
 
   &:before {

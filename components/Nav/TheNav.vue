@@ -316,6 +316,10 @@ a {
 
 }
 
+.v-btn {
+  color: $darkblu;
+}
+
 
 
 

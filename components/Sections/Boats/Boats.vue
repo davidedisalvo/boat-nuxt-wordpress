@@ -20,18 +20,10 @@
             <v-card-text class="text--primary">
 
               <div><p>{{item.acf.post_description}}</p></div>
-                <div><p>{{item.id}}</p></div>
 
             </v-card-text>
 
             <v-card-actions>
-              <v-btn
-                color="orange"
-                text
-                
-              >
-                Share
-              </v-btn>
 
               <v-btn
                 color="orange"
@@ -56,6 +48,11 @@ export default {
 <style lang="scss" scoped>
 h1 {
     text-align: center;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 .v-card {
     margin: 0 auto;

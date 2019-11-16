@@ -6,7 +6,7 @@
       :key="i"
       :src="item"
     >
-    <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo">View boats<v-icon>mdi-anchor</v-icon></v-btn></div>
+    <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo"><nuxt-link to="/boats" tag="span">View boats</nuxt-link><v-icon>mdi-anchor</v-icon></v-btn></div>
     </v-carousel-item>
   </v-carousel>
 </v-layout>

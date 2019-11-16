@@ -56,7 +56,7 @@ export default {
 
   &:before {
     padding: 10px;
-    color: black;
+    color: $darkblu;
   }
 }
 .v-icon.fa-quote-left {
@@ -68,6 +68,7 @@ export default {
   top: 100%;
   right: 0%;
   left: unset;
+
 }
 </style>
 
