@@ -5,6 +5,7 @@ export const strict = false
 export const state = () => ({
   homePage: [],
   boat: [],
+  contact: [],
   window: 320,
   connection: null,
   navOpen: false,
@@ -44,6 +45,10 @@ export const mutations = {
   },
   setBoat (state, obj) {
     state.boat = obj
+  },
+
+  setContact (state, obj) {
+    state.contact = obj
   },
   windowResize (state, size) {
     state.window = size

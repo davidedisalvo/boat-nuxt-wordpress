@@ -85,9 +85,9 @@
           
         </nuxt-link>
                 <nuxt-link
-          to="/test"
+          to="/contact-us"
           class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
-          ><v-btn text>Link 2</v-btn>
+          ><v-btn text>CONTACT US</v-btn>
           
         </nuxt-link>
                 <nuxt-link

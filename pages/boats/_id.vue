@@ -26,7 +26,7 @@
           <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo"><nuxt-link to="/boats" tag="span">Back to Our boats</nuxt-link><v-icon>mdi-anchor</v-icon></v-btn></div>
         </v-col>
         <v-col cols="6">
-          <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo"><nuxt-link to="/boats" tag="span">Contact us</nuxt-link><v-icon>mdi-anchor</v-icon></v-btn></div>
+          <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo"><nuxt-link to="/contact-us" tag="span">Contact us</nuxt-link><v-icon>mdi-anchor</v-icon></v-btn></div>
         </v-col>
       </v-row>
     </v-container>

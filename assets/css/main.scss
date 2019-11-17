@@ -125,3 +125,22 @@ h6 {
 img {
   max-width: 100%;
 }
+
+.v-messages__message {
+    color: red;
+}
+
+.custom-button {
+    color: $darkblu;
+    margin: 20px;
+    border-radius: 0;
+    border: 2px solid $darkblu;
+    font-weight: bold;
+    border-radius: 0 !important;
+
+    &:hover {
+    .v-icon {
+      transform: rotate(360deg);
+    }
+  }
+  }
