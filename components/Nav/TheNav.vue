@@ -61,10 +61,10 @@
 <div class="overlay overlay-slidedown" :class='{open : open}'>
 			<nav>
 				<ul>
-          <nuxt-link to="/test" lass="menu-item" tag="li"><a href="#">Homejhghjghjg</a></nuxt-link>
-          <nuxt-link to="/test" lass="menu-item" tag="li"><a href="#">Homejhghjghjg</a></nuxt-link>
-          <nuxt-link to="/test" lass="menu-item" tag="li"><a href="#">Homejhghjghjg</a></nuxt-link>
-
+          <nuxt-link to="/" class="menu-item" tag="li" @click.native="open = false" ><a href="#">HOME</a></nuxt-link>
+          <nuxt-link to="/boats" class="menu-item" tag="li" @click.native="open = false"><a href="#">BOATS</a></nuxt-link>
+          <nuxt-link to="/privacy" class="menu-item" tag="li" @click.native="open = false"><a href="#">PRIVACY</a></nuxt-link>
+          <v-icon center dark>mdi-anchor</v-icon>
 				</ul>
 			</nav>
 		</div>
@@ -91,9 +91,9 @@
           
         </nuxt-link>
                 <nuxt-link
-          to="/test"
+          to="/privacy"
           class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
-          ><v-btn text>Link 3</v-btn>
+          ><v-btn text>PRIVACY POLICY</v-btn>
           
         </nuxt-link>
       </v-toolbar-items>
@@ -109,6 +109,12 @@
 
   export default {
     name: 'TheNav',
+    async fetch ({ app, store }) {
+      if (!store.state.menu.length) {
+        const menu = await app.$http.$get(Config.wpDomain + Config.api.menu);
+        store.commit("setMenu", menu);
+      }
+    },
     data () {
       return {
         menuItems: [''],
@@ -116,10 +122,13 @@
         open: false
       }
     },
-   
-    
 
-
+    computed: {
+       menu () {
+        if (this.$store.state.menu == null) return false;
+        return this.$store.state.menu;
+      },
+    }
   }
 </script>
 
@@ -172,7 +181,7 @@
     z-index: 3;
       width: 30px;
     height: 30px;
-   background: black;
+   background: $darkblu;
   border-radius: 50%;
 }
 
@@ -203,7 +212,7 @@
 }
 
 .c-menu__svg {
-    fill: black;
+    fill: $darkblu;
     animation: rotating 10s linear infinite;
     transition: fill 0.2s;
 }
@@ -237,7 +246,7 @@
     top: 0;
     left: 0;
     z-index: 9;
-    background: #010181;
+    background: $blu;
 }
 .overlay nav {
     text-align: center;
@@ -254,12 +263,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 100%;
+    justify-content: center;
+    height: 90%;
     position: relative;
+    width: 80%;
 }
 .overlay ul li {
    width: 100%;
+   margin-bottom: 20px;
 }
 .overlay ul li a {
 color: white;
@@ -318,6 +329,23 @@ a {
 
 .v-btn {
   color: $darkblu;
+}
+
+ul {
+  border-bottom: 2px solid $darkblu;
+  position: relative;
+  li {
+  }
+  .v-icon {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $darkblu;
+    padding: 10px;
+    border-radius: 50%;
+    margin-top: -20px;
+  }
 }
 
 

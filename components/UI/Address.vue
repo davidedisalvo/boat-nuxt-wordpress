@@ -36,6 +36,12 @@ export default {
     padding: 30px;
   }
 }
+
+.half-screen {
+    @media only screen and (max-width: $mobile) {
+        text-align: center;
+    }
+}
 .main-block {
     margin-top: 100px;
   h2 {
@@ -47,24 +53,31 @@ export default {
   margin-bottom: 60px;
           @media only screen and (max-width: $mobile) {
             padding: 0;
+            margin-bottom: 0;
         }
     .row-custom {
       justify-content: flex-start;
-        @media only screen and (max-width: $mobile) {
-            margin-bottom: 60px;
-        }
+
   }
     
 }
 
 h3 {
     color: white;
+    @media only screen and (max-width: $mobile) {
+        font-size: 23px;
+
+    }
 }
 .row-custom {
   background-size: cover;
   background-position: center;
   position: relative;
   min-height: 70vh;
+        @media only screen and (max-width: $mobile) {
+            background-position: right;
+
+        }
 }
 .v-icon {
   position: absolute;
@@ -92,7 +105,7 @@ h3 {
     justify-content: center;
     line-height: 2;
       @media only screen and (max-width: $mobile) {
-      padding: 50px;
+      padding: 0px;
   }
 }
 .align-center {

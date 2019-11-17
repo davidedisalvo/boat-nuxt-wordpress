@@ -3,7 +3,7 @@
     <v-container>
         <h2>Contact us</h2>
         <v-row justify="center">
-            <v-col cols="7">
+            <v-col md="7" sm="12">
                 <form :class="{'invisible' : sent}">
                     <v-text-field
                     v-model="name"

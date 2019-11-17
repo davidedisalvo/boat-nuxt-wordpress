@@ -156,6 +156,10 @@
 
   main {
     margin: 50px 0;
+
+    @media only screen and (max-width: $mobile) {
+      margin: 0;
+    }
     
   }
 
@@ -177,6 +181,12 @@
     .col-6:last-child {
       justify-content: flex-end;
       display: flex;
+    }
+  }
+
+  h2 {
+    @media only screen and (max-width: $mobile) {
+      margin-bottom: 40px;
     }
   }
 

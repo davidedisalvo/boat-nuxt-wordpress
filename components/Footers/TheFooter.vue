@@ -1,16 +1,46 @@
 <template>
-  <footer class="footer">
-    <div class="container is-flex">
-      <div class="left-section is-flex-column">
-        <img src="https://placehold.it/40/40" alt="">
-        <div class="links">
-          <p>Email: <a href="mailto:hello@email.com?subject=Interview request">hello@email.com</a></p>
-          <span><nuxt-link to="#">Privacy Policy</nuxt-link></span>
-          <p class="referral-link">Coded with 🧔 by <a href="https://moustachedesign.xyz" target="_blank">Moustache Design</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
+<v-footer
+    color="primary lighten-1"
+    padless
+  >
+  <v-container>
+
+  <v-row justify="center">
+    <p class="copyright">&copy; Davide Di Salvo using <a href="https://github.com/bovas85/nuxt-headless">https://github.com/bovas85/nuxt-headless</a> as boilerplate</p>
+  </v-row>
+    <v-row
+      justify="center"
+      no-gutters
+    >
+
+      <v-col
+        class="primary lighten-2 py-4 text-center white--text"
+        cols="12"
+      >
+        
+        <nuxt-link
+          to="/boats"
+          class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
+          ><v-btn text>OUR BOATS</v-btn>
+          
+        </nuxt-link>
+                <nuxt-link
+          to="/contact-us"
+          class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
+          ><v-btn text>CONTACT US</v-btn>
+          
+        </nuxt-link>
+        <nuxt-link
+          to="/privacy"
+          class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
+          ><v-btn text>Privacy policy</v-btn>
+          
+        </nuxt-link>
+      </v-col>
+    </v-row>
+      </v-container>
+
+  </v-footer>
 </template>
 
 <script>
@@ -26,66 +56,36 @@
 </script>
 
 <style lang="scss" scoped>
+.justify-center {
+  justify-content: center;
+
+  .text-center {
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: $mobile) {
+      justify-content: space-between;
+
+    }
+  }
+}
+
+.v-btn:not(.v-btn--round).v-size--default {
+  @media only screen and (max-width: $mobile) {
+    padding: 0 !important;
+
+  }
+  
+}
+
+.copyright {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 20px;
+}
   footer {
     background-color: $grey;
     color: white;
     padding: $gap;
 
-    .container {
-      align-items: space-between;
-      justify-content: flex-start;
-      flex-direction: column;
-
-      @include media(sm) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
-
-    @include media(sm) {
-      padding: $gap 0;
-    }
-
-    img {
-      object-fit: contain;
-      width: 60px;
-      height: 60px;
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-around;
-
-      a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease-in-out;
-
-        &:hover {
-          color: $primary;
-        }
-      }
-
-      p {
-        line-height: 1.5;
-        margin-top: $gap / 2.5;
-
-        &.referral-link {
-          font-size: $font-size;
-        }
-      }
-    }
-
-    .left-section {
-      flex-basis: 100%;
-
-      @include media(sm) {
-        flex-basis: unset;
-      }
-    }
   }
 </style>

@@ -53,11 +53,12 @@ export default {
   margin-bottom: 60px;
           @media only screen and (max-width: $mobile) {
             padding: 0;
+            margin-bottom: 60px;
         }
     .row-custom:nth-child(even) {
       justify-content: flex-end;
         @media only screen and (max-width: $mobile) {
-            margin-bottom: 60px;
+            margin-bottom: 0px;
         }
 
 
@@ -65,7 +66,7 @@ export default {
     .row-custom:nth-child(odd) {
       justify-content: flex-start;
         @media only screen and (max-width: $mobile) {
-            margin-bottom: 60px;
+            margin-bottom: 0px;
         }
   }
 }

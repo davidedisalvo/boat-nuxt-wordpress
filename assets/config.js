@@ -20,6 +20,8 @@ export default {
     boat: '/wp/v2/boats/?per_page=71',
     contact: '/wp/v2/pages/119',
     // this url will hit an endpoint for contact form 7 plugin
-    postFormContact: '/contact-form-7/v1/contact-forms/7/feedback' // change {form_id} with the contact form 7 id provided
+    postFormContact: '/contact-form-7/v1/contact-forms/7/feedback', // change {form_id} with the contact form 7 id provided
+    menu: '/wp-api-menus/v2/menus/2',
+    privacy: '/wp/v2/pages/3'
   }
 }
