@@ -2,7 +2,7 @@
     <v-container fluid class="main-block" >
         <h2>What we do</h2>
 
-        <v-row class="row-custom" no-gutters v-for="item in acf.main_block"  :class="changeClass" :style="{ backgroundImage: 'url(' + item.image + ')' }">
+        <v-row class="row-custom" no-gutters v-for="(item, index) in acf.main_block"  :class="changeClass" :style="{ backgroundImage: 'url(' + item.image + ')' }" :key="index">
             <v-col class="col-custom" md="6" lg="6" sm="12" >
                 <div class="half-screen">
                     <h3>{{item.title}}</h3>
