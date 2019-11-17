@@ -49,6 +49,12 @@ export default {
     margin-bottom: 30px;
   }
 }
+.half-screen {
+            @media only screen and (max-width: $mobile) {
+            padding: 30px;
+    
+        }
+}
 .container {
   margin-bottom: 60px;
           @media only screen and (max-width: $mobile) {
