@@ -50,6 +50,8 @@ export default {
   }
 }
 .half-screen {
+              padding: 50px;
+
             @media only screen and (max-width: $mobile) {
             padding: 30px;
     
