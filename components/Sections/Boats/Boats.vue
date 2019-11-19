@@ -2,7 +2,7 @@
  <v-container class="center">
       <h2>Our boats</h2>
       <v-row >
-        <v-col  md="4" sm="6" xsm="12" v-for="item in boat" >
+        <v-col  md="4" sm="6" xsm="12" v-for="item in boatList" >
           <v-card 
           class="mx-auto"
           max-width="400"
@@ -42,7 +42,30 @@
 </template>
 <script>
 export default {
-    props: ["boat"]
+    props: ["boat"],
+
+    computed: {
+      boatList () {
+        if (this.$store.state.filterOn == true ) {
+                let price = this.$store.state.filteredBoat.filter(el=> {
+                let elNumber = parseInt(el.acf.price, 10);
+                return elNumber > this.$store.state.price
+          })
+          return price
+        } 
+        if (this.$store.state.filterOn == false) {
+            let price = this.$store.state.boat.filter(el=> {
+            let elNumber = parseInt(el.acf.price, 10);
+            return elNumber > this.$store.state.price
+          })
+
+          return price
+        }
+
+          return this.$store.state.boat
+
+      }
+    }
 }
 </script>
 <style lang="scss" scoped>

@@ -5,6 +5,10 @@ export const strict = false
 export const state = () => ({
   homePage: [],
   boat: [],
+  filteredBoat: [],
+  filterOn: false,
+  filterByPriceOn: false,
+  price: 0,
   menu: [],
   privacy: [],
   contact: [],
@@ -50,6 +54,27 @@ export const mutations = {
   },
   setMenu(state, obj) {
     state.menu = obj
+  },
+
+  setFilterByMotor(state, obj) {
+    state.filteredBoat = obj
+  },
+
+  setFilterBySail(state, obj) {
+    state.filteredBoat = obj
+  },
+
+  setFilterByPrice(state, price) {
+    state.price = price
+  },
+
+  usingFilter(state, bool) {
+    state.filterOn = bool
+  },
+
+  usingFilterByPrice(state, bool) {
+    state.filterByPriceOn = bool
+
   },
 
   setPrivacy(state, obj) {

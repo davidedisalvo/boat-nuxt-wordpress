@@ -1,6 +1,7 @@
 <template>
   <main class="home">
-   <Boats :boat="boat" />
+    <MyFilter :boat="boat" />
+    <Boats :boat="boat" /> 
 
   </main>
 </template>
@@ -14,6 +15,8 @@
   import get from "lodash/get";
   import Defer from "@/mixins/Defer";
   import Boats from "@/components/Sections/Boats/Boats";
+  import MyFilter from "@/components/Sections/Boats/MyFilter";
+
 
 
   export default {
@@ -30,7 +33,8 @@
       };
     },
     components: {
-      Boats
+      Boats,
+      MyFilter
 
     },
     head () {
