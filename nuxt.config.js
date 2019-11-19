@@ -129,7 +129,8 @@ export default {
         src:
           'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver',
           
-      }
+      },
+
       
     ],
     link: [

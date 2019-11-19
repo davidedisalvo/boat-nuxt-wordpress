@@ -25,9 +25,7 @@ export default {
           this.acf.main_block.map(function (item) {
             console.log(item.copy_position)
                 if(item.copy_position = 'Left') {
-                  console.log('left')
                 } else {
-                  console.log('right')
                 }
             });
     }

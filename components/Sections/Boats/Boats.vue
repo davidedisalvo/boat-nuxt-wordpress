@@ -1,8 +1,9 @@
 <template>
  <v-container class="center">
       <h2>Our boats</h2>
-      <v-row >
-        <v-col  md="4" sm="6" xsm="12" v-for="item in boatList" >
+      <transition-group name="test" tag="div" class="row">
+
+        <v-col  md="4" sm="6" xsm="12" v-for="(item, index) in boatList" :key="index">
           <v-card 
           class="mx-auto"
           max-width="400"
@@ -37,12 +38,15 @@
             </v-card-actions>
           </v-card>
         </v-col>
-      </v-row>
+              </transition-group>
+
     </v-container>
 </template>
 <script>
+
 export default {
     props: ["boat"],
+
 
     computed: {
       boatList () {
@@ -94,4 +98,20 @@ h2 {
 .center {
     justify-content: center;
 }
+
+.test {
+  &-move { transition: all 600ms ease-in-out 50ms }
+  &-enter-active { transition: all 300ms ease-out }
+
+  &-leave-active {
+    transition: all 200ms ease-in;
+
+  }
+
+  &-enter,
+  &-leave-to { opacity: 0 }
+  &-enter { transform: scale(0.9) }
+
+}
+
 </style>
