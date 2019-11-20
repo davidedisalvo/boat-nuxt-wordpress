@@ -38,7 +38,8 @@
             </v-card-actions>
           </v-card>
         </v-col>
-              </transition-group>
+      </transition-group>
+      <p v-if="errorMessage" class="errorMessage">We don't have any boat at that price</p>
 
     </v-container>
 </template>
@@ -46,6 +47,11 @@
 
 export default {
     props: ["boat"],
+    data() {
+      return {
+        errorMessage: false
+      }
+    },
 
 
     computed: {
@@ -54,7 +60,12 @@ export default {
                 let price = this.$store.state.filteredBoat.filter(el=> {
                 let elNumber = parseInt(el.acf.price, 10);
                 return elNumber > this.$store.state.price
+                
           })
+
+          if(price.length < 1) {
+            this.errorMessage = true
+          }
           return price
         } 
         if (this.$store.state.filterOn == false) {
@@ -63,10 +74,20 @@ export default {
             return elNumber > this.$store.state.price
           })
 
+          if(price.length < 1) {
+            this.errorMessage = true
+          }
+
           return price
         }
 
+        if(this.$store.state.boat.length < 1) {
+            this.errorMessage = true
+          }
+
           return this.$store.state.boat
+
+        
 
       }
     }
@@ -112,6 +133,12 @@ h2 {
   &-leave-to { opacity: 0 }
   &-enter { transform: scale(0.9) }
 
+}
+
+.errorMessage {
+  text-align: center;
+  color: red;
+  padding: 50px 0;
 }
 
 </style>

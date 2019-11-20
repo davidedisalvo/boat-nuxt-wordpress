@@ -6,7 +6,7 @@
 
         <div data-v-36449e4c="" class="range">
             <input id="range-1" @change='filterBoatsByPrice()' type="range" min="0" max="400000" v-model="price" class="range-slider">
-            <div class="price">Price: {{price}}</div>
+            <div class="price">Price: greater than {{price}}</div>
         </div>        
         <v-btn class="custom-button" outlined @click="filterBoatsByMotor">Motor Boats<v-icon>mdi-anchor</v-icon></v-btn>
         <v-btn class="custom-button" outlined @click="filterBoatsBySail">Sail Boats<v-icon>mdi-anchor</v-icon></v-btn>

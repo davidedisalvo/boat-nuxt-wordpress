@@ -61,7 +61,7 @@
 <div class="overlay overlay-slidedown" :class='{open : open}'>
 			<nav>
 				<ul>
-          <nuxt-link to="/" class="menu-item" tag="li" @click.native="open = false" ><a href="#">HOME</a></nuxt-link>
+          <nuxt-link to="/" exact class="menu-item" tag="li" @click.native="open = false" ><a href="#">HOME</a></nuxt-link>
           <nuxt-link to="/boats" class="menu-item" tag="li" @click.native="open = false"><a href="#">BOATS</a></nuxt-link>
           <nuxt-link to="/privacy" class="menu-item" tag="li" @click.native="open = false"><a href="#">PRIVACY</a></nuxt-link>
           <v-icon center dark>mdi-anchor</v-icon>
@@ -71,6 +71,7 @@
     <v-toolbar>
       <v-toolbar-title><nuxt-link
           to="/"
+          exact
           class=""
           >BOAT FOR SALE</nuxt-link></v-toolbar-title>
       
@@ -80,17 +81,22 @@
       <v-toolbar-items>
         <nuxt-link
           to="/boats"
+          tag="div"
           class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
           ><v-btn text>OUR BOATS</v-btn>
           
         </nuxt-link>
                 <nuxt-link
+                          tag="div"
+
           to="/contact-us"
           class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
           ><v-btn text>CONTACT US</v-btn>
           
         </nuxt-link>
                 <nuxt-link
+                          tag="div"
+
           to="/privacy"
           class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
           ><v-btn text>PRIVACY POLICY</v-btn>
@@ -306,6 +312,15 @@ a {
     transform: translate(0,-50%);
     // width: 130px; //js to calculate width of each <a>
   }
+}
+
+.nuxt-link-active {
+ 
+      border-bottom: 5px solid $darkblu;
+    .v-btn {
+      margin-bottom: -5px;
+    }
+  
 }
 
 .layer{
