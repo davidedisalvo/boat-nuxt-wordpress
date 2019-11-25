@@ -26,6 +26,9 @@ export const mutations = {
     state.modalOpen = false
     state.navOpen = false
   },
+  resetPrice (state) {
+    state.price = 0
+  },
   hideMenuBg (state) {
     state.menuScrolled = false
     state.menuScrolledDone = false

@@ -51,10 +51,13 @@ export default {
         clearFilter() {
             this.$store.commit('usingFilter', false)
             this.$store.commit('usingFilterByPrice', false)
+            this.$store.commit('resetPrice')
+            this.price = 0
+
 
 
         }
-    }
+    },
 }
 </script>
 <style lang="scss" scoped>
