@@ -69,11 +69,9 @@
 			</nav>
 		</div>
     <v-toolbar>
-      <v-toolbar-title><nuxt-link
-          to="/"
-          exact
-          class=""
-          >BOAT FOR SALE</nuxt-link></v-toolbar-title>
+      <v-toolbar-title><a
+          href="/"
+          >BOAT FOR SALE</a></v-toolbar-title>
       
 
       <v-spacer></v-spacer>
@@ -313,8 +311,8 @@ a {
     // width: 130px; //js to calculate width of each <a>
   }
 }
-
-.nuxt-link-active {
+ .v-btn--flat {
+   &.nuxt-link-active {
  
       border-bottom: 5px solid $darkblu;
     .v-btn {
@@ -322,6 +320,8 @@ a {
     }
   
 }
+ }
+
 
 .layer{
     height: 30px;
