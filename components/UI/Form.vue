@@ -66,6 +66,7 @@
   import Config from '~/assets/config'
   import { required, email } from 'vuelidate/lib/validators'
 
+
   export default {
       
 
@@ -132,7 +133,9 @@
         }
 
         
-      }
+      },
+
+      
     },
     computed: {
        checkboxErrors () {

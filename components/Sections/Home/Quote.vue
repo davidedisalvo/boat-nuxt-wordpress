@@ -1,5 +1,6 @@
 <template>
     <v-container fluid class="quote">
+
       <v-row class="center" justify="center">
         <h2>They said about us</h2>      
 
@@ -14,12 +15,30 @@
 <script>
 export default {
       name: "Quote",
-      props: ["acf"]
+      props: ["acf"],
+      mounted () {
+      let tl = this.$gsap.TweenMax.to('.quote', 5, { duration: 5, autoAlpha: 1 })
+      const scene = new this.$scrollmagic.Scene({
+        triggerElement: '.quote',
+        triggerHook: 'onLeave',
+        offset: '-580',
+        duration: '.3'
+      })
+      .setPin('.quote')
+      .setTween(tl)
+
+      // Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
+      this.$ksvuescr.$emit('addScene', 'pinContainerScene', scene)
+
+    },
 
 }
 </script>
 <style lang="scss" scoped>
 .quote {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .7s;
   h2 {
     text-align: center;
     margin-bottom: 30px;

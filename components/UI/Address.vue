@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="main-block" >
+    <v-container fluid id="trigger" class="main-block" >
         <h2>Or send us an email</h2>
         <v-row class="row-custom" no-gutters :style="{ backgroundImage: 'url(' + contact.acf.background_image + ')' }">
             <v-col class="col-custom" md="6" lg="6" sm="12" >
@@ -24,7 +24,22 @@ export default {
           
           
     }
-  }
+  },
+
+      mounted () {
+      let tl = this.$gsap.TweenMax.to('.half-screen', 1, { autoAlpha: 0 })
+      const scene = new this.$scrollmagic.Scene({
+        triggerElement: '#trigger',
+        triggerHook: 'onLeave',
+        duration: '.3'
+      })
+      .setPin('#trigger')
+      .setTween(tl)
+
+      // Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
+      this.$ksvuescr.$emit('addScene', 'pinContainerScene', scene)
+
+    },
 }
 </script>
 <style lang="scss" scoped>

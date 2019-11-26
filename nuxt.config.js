@@ -302,6 +302,10 @@ export default {
     '~/plugins/vue-smooth-scroll.client.js',
     '~/plugins/splitting.client.js',
     '~/plugins/hotjar.client.js',
-    '~/plugins/nuxt-swiper.client.js'
+    '~/plugins/nuxt-swiper.client.js',
+    {
+      src: '~/plugins/ksvuefp',
+      ssr: false
+    }
   ]
 }
