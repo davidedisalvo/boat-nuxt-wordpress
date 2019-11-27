@@ -52,6 +52,7 @@ export default {
   visibility: visible;
   opacity: 1;
   transition: all .7s;
+  margin-top: -90px;
 }
 
 .justify-center {

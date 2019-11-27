@@ -62,7 +62,6 @@ export default {
 <style lang="scss" scoped>
 section {
   margin: 0 !important;
-  margin-bottom: 60px !important;
 }
 
 .pin-container {
