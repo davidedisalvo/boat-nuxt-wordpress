@@ -10,7 +10,6 @@
                 </div>
             </v-col>
             <v-icon center dark>mdi-anchor</v-icon>
-          
         </v-row>
       
     </v-container>
@@ -26,43 +25,35 @@ export default {
     },
     computed: {
      changeStyle() {
-
-         if(this.trigger == true) {
-                  return {border: '2px solid black'}
-       }
-     }
+      if(this.trigger == true) {
+        return {border: '2px solid black'}
+      }
+    }    
   },
 
-mounted () {
-const par = [...this.acf.main_block].length
-const arr = []
-for (var i = 0; i < par; i++) {
-  arr.push(`.row-custom-${i}`)
-}
-const x = `${arr.toString()}`
-
-console.log(arr)
-console.log(x)
-
-const observe_box = scrollzzz({
-  targets: x,
-  debug: true,
-  trigger: 0.5
-});
-
-observe_box
-  .init()
-  .observe(({ direction, position, entry }) => { 
-    console.log(entry)
-    if (position == 'intersect') {
-      this.trigger = true
+  mounted () {
+    const par = [...this.acf.main_block].length
+    const arr = []
+    for (var i = 0; i < par; i++) {
+      arr.push(`.row-custom-${i}`)
     }
-   });
+    const x = `${arr.toString()}`
+    const observe_box = scrollzzz({
+      targets: x,
+      debug: true,
+      progressione: true,
+      trigger: 0.5
+    });
 
-  
+    observe_box
+      .init()
+      .observe(({ direction, position, entry }) => { 
+      console.log(entry)
+      if (position == 'intersect') {
+        this.trigger = true
+      }
+    });
   }
-
-
 }
 </script>
 <style lang="scss" scoped>
