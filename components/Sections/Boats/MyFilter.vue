@@ -6,7 +6,7 @@
 
         <div data-v-36449e4c="" class="range">
             <input id="range-1" @change='filterBoatsByPrice()' type="range" min="0" max="400000" v-model="price" class="range-slider">
-            <div class="price">Price: greater than {{price}}</div>
+            <div class="price"><strong>Price:</strong> higher than {{commaInNumber}}£</div>
         </div>        
         <v-btn class="custom-button" outlined @click="filterBoatsByMotor">Motor Boats<v-icon>mdi-anchor</v-icon></v-btn>
         <v-btn class="custom-button" outlined @click="filterBoatsBySail">Sail Boats<v-icon>mdi-anchor</v-icon></v-btn>
@@ -22,7 +22,7 @@ export default {
     props: ["boat"],
     data () {
         return {
-            price: this.$store.state.price
+            price: 0
         }
     },
     methods: {
@@ -53,11 +53,20 @@ export default {
             this.$store.commit('usingFilterByPrice', false)
             this.$store.commit('resetPrice')
             this.price = 0
-
-
-
         }
     },
+
+    computed: {
+        commaInNumber () {
+            if(this.$store.state.price > 1000) {
+                const el = this.$store.state.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+                return el
+            } else {
+                return this.$store.state.price
+            }
+
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

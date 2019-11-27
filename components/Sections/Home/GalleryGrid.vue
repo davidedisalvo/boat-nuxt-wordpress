@@ -1,6 +1,6 @@
 <template>
   <section v-if="acf">
-    <v-container>
+    <v-container class="copy-container">
       <h2>Some of our boat</h2>
       <v-row justify="center">
         <v-col sm="12" md="7">
@@ -37,6 +37,43 @@ export default {
     }
   },
 
+  mounted () {
+
+    const observe_box = scrollzzz({
+      targets: '.copy-container',
+      debug: false,
+      progressione: true,
+      trigger: 0.7
+    });
+
+    observe_box
+      .init()
+      .observe(({ direction, position, entry }) => { 
+      console.log(entry)
+      if (position == 'intersect') {
+        entry.target.classList.add('changed');
+
+      }
+    });
+
+    const observe_box2 = scrollzzz({
+      targets: '.grid-container',
+      debug: false,
+      progressione: true,
+      trigger: 0.4
+    });
+
+    observe_box2
+      .init()
+      .observe(({ direction, position, entry }) => { 
+      console.log(entry)
+      if (position == 'intersect') {
+        entry.target.classList.add('changed-grid');
+
+      }
+    });
+  }
+
 };
 </script>
 
@@ -58,6 +95,21 @@ export default {
 .container {
   margin-bottom: 30px;
 }
+
+.copy-container {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+}
+
+.changed {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all .4s;
+}
+
+
 @media only screen and (min-width: $tablet) {
   .grid-container {
     display: grid;
@@ -66,28 +118,89 @@ export default {
 
     .grid-item:nth-child(1) {
       grid-column: span 3;
+      transform: translateX(-1000px);
+      transition: all 1s;
+
     }
 
     .grid-item:nth-child(2) {
       grid-column: span 3;
+      transform: translateX(1000px);
+      transition: all 1s;
     }
 
     .grid-item:nth-child(3) {
       grid-column: span 2;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1000px);
+      transition: all 1s;
+      transition: all 1s;
     }
 
     .grid-item:nth-child(4) {
       grid-column: span 2;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1000px);
+      transition: all 1s;
+
+
     }
 
     .grid-item:nth-child(5) {
       grid-column: span 2;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1000px);
+      transition: all 1s;
     }
 
     .grid-item:nth-child(6) {
       grid-column: span 5;
     }
   }
+
+  .changed-grid {
+      .grid-item:nth-child(1) {
+      grid-column: span 3;
+      transform: translateX(0)
+    }
+
+    .grid-item:nth-child(2) {
+      grid-column: span 3;
+      transform: translateX(0)
+
+    }
+
+    .grid-item:nth-child(3) {
+      grid-column: span 2;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+
+    }
+
+    .grid-item:nth-child(4) {
+      grid-column: span 2;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+
+    }
+
+    .grid-item:nth-child(5) {
+      grid-column: span 2;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0)
+
+    }
+
+    .grid-item:nth-child(6) {
+      grid-column: span 5;
+    }
+}
 }
 
 .v-icon {

@@ -26,6 +26,7 @@ $fullhd: 1392px !default;
 // Initial Styles + resets
 html,
 body {
+  scroll-behavior: smooth;
   font-family: $family-primary;
   font-size: $font-size;
   word-spacing: 1px;

@@ -17,18 +17,21 @@ export default {
       name: "Quote",
       props: ["acf"],
       mounted () {
-      let tl = this.$gsap.TweenMax.to('.quote', 5, { duration: 5, autoAlpha: 1 })
-      const scene = new this.$scrollmagic.Scene({
-        triggerElement: '.quote',
-        triggerHook: 'onLeave',
-        offset: '-580',
-        duration: '.3'
-      })
-      .setPin('.quote')
-      .setTween(tl)
+      const observe_box = scrollzzz({
+      targets: '.quote',
+      debug: false,
+      progressione: true,
+      trigger: 0.7
+    });
 
-      // Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
-      this.$ksvuescr.$emit('addScene', 'pinContainerScene', scene)
+    observe_box
+      .init()
+      .observe(({ direction, position, entry }) => { 
+      console.log(entry)
+      if (position == 'intersect') {
+        entry.target.classList.add('changed');
+      }
+    });
 
     },
 
@@ -43,6 +46,12 @@ export default {
     text-align: center;
     margin-bottom: 30px;
   }
+}
+
+.changed {
+  visibility: visible;
+  opacity: 1;
+  transition: all .7s;
 }
 
 .justify-center {

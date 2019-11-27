@@ -29,14 +29,7 @@
 
 <style lang="scss" scoped>
 
-  .hero {
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-    align-items: flex-end;
-    justify-content: flex-end;
-    display: flex;
-  }
+
 
 
   .custom-button {

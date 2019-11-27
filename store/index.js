@@ -68,6 +68,7 @@ export const mutations = {
   },
 
   setFilterByPrice(state, price) {
+
     state.price = price
   },
 

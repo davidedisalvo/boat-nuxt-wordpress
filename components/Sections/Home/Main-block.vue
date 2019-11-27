@@ -39,10 +39,10 @@ export default {
     }
     const x = `${arr.toString()}`
     const observe_box = scrollzzz({
-      targets: x,
-      debug: true,
+      targets: '.row-custom',
+      debug: false,
       progressione: true,
-      trigger: 0.5
+      trigger: 0.7
     });
 
     observe_box
@@ -50,7 +50,8 @@ export default {
       .observe(({ direction, position, entry }) => { 
       console.log(entry)
       if (position == 'intersect') {
-        this.trigger = true
+        entry.target.classList.add('changed');
+
       }
     });
   }
@@ -100,7 +101,12 @@ export default {
         }
   }
 }
+
+
 .row-custom {
+  transition: all 1s;
+  opacity: 0;
+  visibility: hidden;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -110,6 +116,27 @@ export default {
     opacity: 0;
     visibility: hidden;
   }
+
+  &.changed {
+  transition: all 1s;
+  opacity: 1;
+  visibility: visible;
+
+  .col-custom {
+  transition: all 1s;
+  transition-delay: .4s;
+  opacity: 1;
+  visibility: visible;
+  }
+
+  .v-icon {
+    transition: all 1s;
+    transition-delay: .8s;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 
 }
 .v-icon {
@@ -131,7 +158,7 @@ export default {
 .col-custom {
   opacity: 0;
   visibility: hidden;
-  transition: all .6s;
+  transition: all 1s;
     padding: 70px;
     text-align: left;
     background: #000000ba;
