@@ -2,8 +2,8 @@
     <v-container fluid class="main-block" >
         <h2>What we do</h2>
 
-        <v-row :class="`row-custom-${index}`" class="row-custom" no-gutters v-for="(item, index) in acf.main_block" :style="{ backgroundImage: 'url(' + item.image + ')' }" :key="index">
-            <v-col :class="`col-custom-${index}`" class="col-custom" md="6" lg="6" sm="12" >
+        <v-row :class="[`row-custom-${index}` , {'visible' : trigger}]" class="row-custom" no-gutters v-for="(item, index) in acf.main_block" :key="index" :style="[{ backgroundImage: 'url(' + item.image + ')'}, changeStyle ]">
+            <v-col :class="`col-custom-${index}`" class="col-custom" md="6" lg="6" sm="12" :style={}>
                 <div class="half-screen">
                     <h3>{{item.title}}</h3>
                     <p>{{item.copy}}</p>
@@ -19,42 +19,47 @@
 export default {
     name: "Main-Block",
     props: ["acf"],
+    data () {
+      return {
+        trigger: false
+      }
+    },
     computed: {
-        changeClass () {
-          
-          this.acf.main_block.map(function (item) {
-            console.log(item.copy_position)
-                
-            });
-    }
+     changeStyle() {
+
+         if(this.trigger == true) {
+                  return {border: '2px solid black'}
+       }
+     }
   },
 
-  mounted () {
-    const par = [...this.acf.main_block].length
-    for (var i = 0; i < par; i++) {
-          this.$gsap.TweenMax.set(`.row-custom-${i}`,{ autoAlpha: 0 })
-          const tl2 = new this.$gsap.TimelineMax()
-      
+mounted () {
+const par = [...this.acf.main_block].length
+const arr = []
+for (var i = 0; i < par; i++) {
+  arr.push(`.row-custom-${i}`)
+}
+const x = `${arr.toString()}`
 
+console.log(arr)
+console.log(x)
 
+const observe_box = scrollzzz({
+  targets: x,
+  debug: true,
+  trigger: 0.5
+});
 
-    const scene = new this.$scrollmagic.Scene({
-        triggerElement: `.row-custom-${i}`,
-        offset: '-200',
-        duration: '15s',
-        reverse: false
-      })
-      .setTween(tl2.to(`.row-custom-${i}`, 1, { autoAlpha: 1 })
-        .to(`.col-custom-${i}`, .6, { autoAlpha: 1 })
-        .to(`.row-custom-${i} .v-icon`,30 ,{ autoAlpha: 1, duration: '30s', delay: '3s' })
-        .to(`.row-custom-${i} .v-icon`,10 ,{ rotation: 360 })
-)
-
-      // Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
-      this.$ksvuescr.$emit('addScene', 'pinContainerScene', scene)
-
-
+observe_box
+  .init()
+  .observe(({ direction, position, entry }) => { 
+    console.log(entry)
+    if (position == 'intersect') {
+      this.trigger = true
     }
+   });
+
+  
   }
 
 
@@ -111,10 +116,10 @@ export default {
   min-height: 70vh;
 
   .v-icon {
-
     opacity: 0;
     visibility: hidden;
   }
+
 }
 .v-icon {
   position: absolute;

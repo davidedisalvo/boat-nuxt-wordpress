@@ -130,6 +130,10 @@ export default {
           'https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver',
           
       },
+      {
+        src: "https://unpkg.com/scrollzzz/dist/scrollzzz.iife.min.js"
+
+      }
 
       
     ],
