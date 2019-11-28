@@ -98,7 +98,7 @@ h3 {
   }
 }
 .col-custom {
-    padding: 70px;
+    padding: 70px !important;
     text-align: left;
     background: #000000ba;
     color: white;
