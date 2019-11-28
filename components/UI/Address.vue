@@ -26,20 +26,7 @@ export default {
     }
   },
 
-      mounted () {
-      let tl = this.$gsap.TweenMax.to('.half-screen', 1, { autoAlpha: 0 })
-      const scene = new this.$scrollmagic.Scene({
-        triggerElement: '#trigger',
-        triggerHook: 'onLeave',
-        duration: '.3'
-      })
-      .setPin('#trigger')
-      .setTween(tl)
-
-      // Add scene to ScrollMagic controller by emiting an 'addScene' event on vm.$ksvuescr (which is our global event bus)
-      this.$ksvuescr.$emit('addScene', 'pinContainerScene', scene)
-
-    },
+     
 }
 </script>
 <style lang="scss" scoped>
