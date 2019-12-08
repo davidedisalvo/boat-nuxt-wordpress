@@ -7,6 +7,8 @@
                 <div class="half-screen">
                     <h3>{{item.title}}</h3>
                     <p>{{item.copy}}</p>
+                    <slot></slot>
+
                 </div>
             </v-col>
             <v-icon center dark>mdi-anchor</v-icon>
@@ -146,9 +148,9 @@ export default {
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 50%;
-  @media only screen and (max-width: $desktop) {
-      display: none;
-  }
+  // @media only screen and (max-width: $desktop) {
+  //     display: none;
+  // }
 
   &:before {
     padding: 10px;

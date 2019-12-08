@@ -5,6 +5,7 @@ export const strict = false
 export const state = () => ({
   homePage: [],
   boat: [],
+  whoWeAre: [],
   filteredBoat: [],
   filterOn: false,
   filterByPriceOn: false,
@@ -51,6 +52,9 @@ export const mutations = {
   },
   setHomepage (state, obj) {
     state.homePage = obj
+  },
+  setwhoWeAre (state, obj) {
+    state.whoWeAre = obj
   },
   setBoat (state, obj) {
     state.boat = obj

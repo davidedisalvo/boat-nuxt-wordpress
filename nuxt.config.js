@@ -240,7 +240,7 @@ export default {
   css: [
     // main css file
     '@/assets/css/main.scss',
-    'swiper/dist/css/swiper.css'
+    'swiper/dist/css/swiper.css',
   ],
   /*
    ** Customize the progress-bar style
@@ -307,6 +307,8 @@ export default {
     '~/plugins/splitting.client.js',
     '~/plugins/hotjar.client.js',
     '~/plugins/nuxt-swiper.client.js',
+
+
     {
       src: '~/plugins/ksvuefp',
       ssr: false

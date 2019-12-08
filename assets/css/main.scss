@@ -77,6 +77,17 @@ h1, h2, h3, a, button {
   margin: 0;
 }
 
+.vueperslides__arrows--outside .vueperslides__arrow--prev {
+    left: 0 !important;
+}
+.vueperslides__arrows--outside .vueperslides__arrow--next {
+    right: 0 !important;
+}
+
+.vueperslides__arrow svg {
+    stroke: white !important;
+}
+
 @import './elements';
 
 // Main pages Layout

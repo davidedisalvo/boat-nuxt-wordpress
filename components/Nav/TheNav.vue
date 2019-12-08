@@ -62,6 +62,8 @@
 			<nav>
 				<ul>
           <nuxt-link to="/" exact class="menu-item" tag="li" @click.native="open = false" ><a href="#">HOME</a></nuxt-link>
+          <nuxt-link to="/who-we-are" class="menu-item" tag="li" @click.native="open = false"><a href="#">WHO WE ARE</a></nuxt-link>
+
           <nuxt-link to="/boats" class="menu-item" tag="li" @click.native="open = false"><a href="#">BOATS</a></nuxt-link>
           <nuxt-link to="/privacy" class="menu-item" tag="li" @click.native="open = false"><a href="#">PRIVACY</a></nuxt-link>
           <v-icon center dark>mdi-anchor</v-icon>
@@ -77,6 +79,13 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items>
+         <nuxt-link
+          to="/who-we-are"
+          tag="div"
+          class="v-btn v-btn--flat v-btn--text theme--light v-size--default"
+          ><v-btn text>WHO WE ARE</v-btn>
+          
+        </nuxt-link>
         <nuxt-link
           to="/boats"
           tag="div"

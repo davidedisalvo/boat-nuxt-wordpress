@@ -4,10 +4,10 @@
       <h2>{{singleBoat[0].acf.post_title}}</h2>
 
       <v-row class="general-container">
-        <v-col cols="6" class="image">
+        <v-col md="6" sm="12" class="image">
           <img :src="singleBoat[0].acf.post_image" alt="">
         </v-col>
-        <v-col cols="6" class="basic-info">
+        <v-col md="6" sm="12" class="basic-info">
           <h3>Price: {{singleBoat[0].acf.price}} £</h3>
           <h3>Location: {{singleBoat[0].acf.location}}</h3>
           <h3>Type: {{singleBoat[0].acf.type}}</h3>
@@ -22,10 +22,10 @@
     </v-container>
     <v-container>
       <v-row class="button-container">
-        <v-col cols="6">
+        <v-col sm="12" md="6">
           <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo"><nuxt-link to="/boats" tag="span">Back to Our boats</nuxt-link><v-icon>mdi-anchor</v-icon></v-btn></div>
         </v-col>
-        <v-col cols="6">
+        <v-col sm="12" md="6">
           <div class="button-container"><v-btn class="ma-2 custom-button" outlined color="indigo"><nuxt-link to="/contact-us" tag="span">Contact us</nuxt-link><v-icon>mdi-anchor</v-icon></v-btn></div>
         </v-col>
       </v-row>
@@ -152,6 +152,9 @@
     background: #686868;
     padding: 5px;
     border-radius: 20px 0;
+        @media only screen and (max-width: $mobile) {
+      flex-direction: column;
+    }
   }
 
   main {
@@ -178,6 +181,8 @@
   }
 
   .button-container {
+    display: flex;
+    justify-content: center;
     .col-6:last-child {
       justify-content: flex-end;
       display: flex;
@@ -187,6 +192,18 @@
   h2 {
     @media only screen and (max-width: $mobile) {
       margin-bottom: 40px;
+    }
+  }
+
+  .v-btn {
+    @media only screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  .image {
+        @media only screen and (max-width: $mobile) {
+      width: 100%;
     }
   }
 
