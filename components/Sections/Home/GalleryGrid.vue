@@ -13,7 +13,7 @@
     </v-container>
     <div class="grid-container">
       <figure class="grid-item" v-for="item in acf.gallery_grid">
-        <img  :src="item" alt="" />
+        <img  v-lazy="item" alt="" />
       </figure>
     </div>
   </section>

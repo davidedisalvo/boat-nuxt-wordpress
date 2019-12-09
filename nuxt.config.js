@@ -307,6 +307,8 @@ export default {
     '~/plugins/splitting.client.js',
     '~/plugins/hotjar.client.js',
     '~/plugins/nuxt-swiper.client.js',
+    '~/plugins/vue-lazyload.js',
+
 
 
     {
