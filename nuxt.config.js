@@ -245,11 +245,7 @@ export default {
   /*
    ** Customize the progress-bar style
    */
-  loading: {
-    color: '#f4a261',
-    height: '4px',
-    failedColor: '#DF4661'
-  },
+  loading: false,
   /*
    ** Modules
    */
