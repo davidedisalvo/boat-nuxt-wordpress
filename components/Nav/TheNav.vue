@@ -155,7 +155,7 @@
     cursor: pointer;
     pointer-events: auto;
     margin: 30px;
-    z-index: 999;
+    z-index: 99999;
     cursor: pointer;
   @media only screen and (max-width: 480px) {
     display: inline-block;
@@ -258,7 +258,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 9999;
     background: $blu;
 }
 .overlay nav {
@@ -292,7 +292,7 @@ font-size: 34px;
 
 .overlay-slidedown.open {
     visibility: visible;
-    z-index: 9;
+    z-index: 9999;
     -webkit-transform: translateY(0%);
     transform: translateY(0%);
     -webkit-transition: -webkit-transform 0.4s ease-in-out;
