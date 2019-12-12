@@ -42,6 +42,9 @@ export default {
 .half-screen {
     @media only screen and (max-width: $mobile) {
         text-align: center;
+          word-break: break-all;
+          font-size: 16px;
+
     }
 }
 .main-block {
@@ -67,7 +70,7 @@ export default {
 h3 {
     color: white;
     @media only screen and (max-width: $mobile) {
-        font-size: 23px;
+        font-size: 16px;
 
     }
 }
@@ -107,7 +110,7 @@ h3 {
     justify-content: center;
     line-height: 2;
       @media only screen and (max-width: $mobile) {
-      padding: 0px;
+      padding: 0px !important;
   }
 }
 .align-center {

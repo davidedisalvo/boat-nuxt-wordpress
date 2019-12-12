@@ -1,5 +1,6 @@
 <template>
   <main class="contact-us">
+    <Map :contact="contact"/>
     <Form :contact="contact" />
     <Address :contact="contact" />
 
@@ -18,6 +19,8 @@
     import Boats from "@/components/Sections/Boats/Boats";
     import Form from "@/components/UI/Form";
     import Address from "@/components/UI/Address";
+    import Map from "@/components/UI/Map";
+
 
 
 
@@ -38,7 +41,8 @@
     components: {
       Boats,
       Form,
-      Address
+      Address,
+      Map
 
     },
     head () {

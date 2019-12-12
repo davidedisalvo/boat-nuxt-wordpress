@@ -253,6 +253,8 @@ export default {
     '@nuxtjs/pwa',
     '@nuxt/http',
     '@nuxtjs/sitemap',
+    'nuxt-leaflet',
+
     'cookie-universal-nuxt',
     '@nuxtjs/vuetify',
     [
