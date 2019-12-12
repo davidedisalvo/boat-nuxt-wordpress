@@ -78,5 +78,6 @@ export default {
     padding: 10px;
     border-radius: 50%;
     transform: translateX(-50%);
+    color: white;
 } 
 </style>
