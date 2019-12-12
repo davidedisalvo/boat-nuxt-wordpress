@@ -70,4 +70,13 @@ export default {
         font-size: 24px;
     }
 }
+.v-icon {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    background: $darkblu;
+    padding: 10px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+} 
 </style>
