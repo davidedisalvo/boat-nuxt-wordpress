@@ -1,7 +1,19 @@
 <template>
-<div id="map-wrap" style="height: 60vh">
+<div>
+    <div v-if="!canLoad">
+        <v-progress-circular
+
+      :size="70"
+      :width="7"
+      color="purple"
+      indeterminate
+    ></v-progress-circular>
+    <p class="loading">Map is loading...</p>
+    </div>
+
+<div id="map-wrap" style="height: 60vh" v-if="canLoad">
  <no-ssr>
-   <l-map :zoom=13 :center="latLng" v-if="canLoad">
+   <l-map :zoom=13 :center="latLng">
      <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
      <l-marker :lat-lng="latLng"></l-marker>
    </l-map>
@@ -17,7 +29,7 @@
  </v-container>
  <i aria-hidden="true" class="v-icon notranslate custom-icon mdi mdi-anchor theme--light" data-v-03039c94=""></i>
  </v-container>
- 
+ </div>
 </div>
 </template>
 <script>
@@ -79,5 +91,20 @@ export default {
     border-radius: 50%;
     transform: translateX(-50%);
     color: white;
+    @media only screen and (max-width: $mobile) {
+            top: 100%;
+
+    }
 } 
+.v-progress-circular.v-progress-circular--indeterminate.purple--text {
+    margin-left: 50%;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    transform: translateX(-50%);
+}
+.loading {
+    margin-left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+}
 </style>
