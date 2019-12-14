@@ -148,9 +148,9 @@ export default {
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 50%;
-  // @media only screen and (max-width: $desktop) {
-  //     display: none;
-  // }
+  @media only screen and (max-width: $mobile) {
+      display: none;
+  }
 
   &:before {
     padding: 10px;
